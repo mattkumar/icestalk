@@ -1,0 +1,24 @@
+
+Call:
+glm(formula = death ~ age + sex, family = "binomial", data = df)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.6913  -0.6744  -0.6577  -0.6420   1.8375  
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -1.551739   0.267777  -5.795 6.84e-09 ***
+age          0.003723   0.005910   0.630    0.529    
+sexMale     -0.004694   0.160357  -0.029    0.977    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 995.23  on 999  degrees of freedom
+Residual deviance: 994.84  on 997  degrees of freedom
+AIC: 1000.8
+
+Number of Fisher Scoring iterations: 4
+

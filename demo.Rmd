@@ -1,0 +1,47 @@
+---
+title: "demo"
+author: "Matt"
+date: "11/01/2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+    toc: toc
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## My analysis
+
+This is an R Markdown document. **Markdown** is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. 
+
+
+```{r, echo=FALSE}
+library(kableExtra)
+library(broom)
+
+my_data <- data.frame(y=rnorm(100), 
+                      x1=rnorm(100),
+                      x2=rexp(100),
+                      x3=rpois(100,5)
+                      )
+my_data %>%
+      lm(data=., y ~ x1 + x2 + x3) %>%
+      tidy()                       %>%
+      kable()           
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+my_data %>%
+      lm(data=., y ~ x1 + x2 + x3) %>%
+      plot()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
